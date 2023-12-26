@@ -4,3 +4,6 @@ from django.http import HttpResponse
 
 def home(request):
     return render(request,"index.html")
+
+def show_tasks(request):
+    return render(request,"tasks.html")
