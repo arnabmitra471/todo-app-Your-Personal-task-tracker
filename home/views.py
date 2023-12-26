@@ -3,4 +3,4 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
-    return HttpResponse("This is the todo home page")
+    return render(request,"index.html")
