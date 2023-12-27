@@ -1,16 +1,18 @@
 {%extends "base.html" %}
+{%block homeactive %}active{%endblock homeactive %}
 {%block body %}
       <div class="container my-3">
         <h2 class="text-left">Add a Task</h2>
         
-        <form>
+        <form action="/" method="post">
+          {% csrf_token %}
             <div class="mb-3">
               <label for="title" class="form-label">Task Title</label>
-              <input type="text" class="form-control" id="title" aria-describedby="emailHelp">
+              <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
               <label for="description" class="form-label">Task Details</label>
-              <textarea class="form-control" id="description" rows="10" cols="30"></textarea>
+              <textarea class="form-control" id="description" name="description" rows="10" cols="30"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
