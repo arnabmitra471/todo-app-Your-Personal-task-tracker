@@ -3,13 +3,21 @@ from .models import Tasks
 # Create your views here.
 
 def home(request):
+    context = {
+        "success": False,
+        "name": "Arnab"
+    }
     if request.method == "POST":
         taskTitle = request.POST["title"]
         taskDesc = request.POST["description"]
         taskDetails = Tasks(taskTitle=taskTitle,taskDesc=taskDesc)
         taskDetails.save()
         print("The data has been written to the database successfully")
-    return render(request,"index.html")
+        context = {
+            "success": True
+        }
+    print(context)
+    return render(request,"index.html",context)
 
 def show_tasks(request):
     return render(request,"tasks.html")

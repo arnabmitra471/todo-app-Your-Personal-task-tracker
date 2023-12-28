@@ -2,7 +2,8 @@
 {%block homeactive %}active{%endblock homeactive %}
 {%block body %}
       <div class="container my-3">
-        <h2 class="text-left">Add a Task</h2>
+        <h2 class="text-center">Welcome to Your personal task manager {{ name }}</h2>
+        <h2 class="text-center mt-3">Add a Task</h2>
         
         <form action="/" method="post">
           {% csrf_token %}
